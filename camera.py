@@ -40,4 +40,6 @@ class Camera:
     with self._frame_condition:
       self._frame_condition.notify_all()
 
+    self._cap_loop_thread.join(timeout=2)
+    
     self._cap.release()
